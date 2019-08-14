@@ -1,0 +1,17 @@
+eclipse.preferences.version=1
+encoding//src/com/neusoft/control/EtfjinHandler.java=UTF-8
+encoding//src/com/neusoft/control/EtfyinHandler.java=UTF-8
+encoding//src/com/neusoft/control/MessageHandler.java=UTF-8
+encoding//src/com/neusoft/io/Demo1.java=UTF-8
+encoding//src/com/neusoft/io/Demo3.java=UTF-8
+encoding//src/com/neusoft/io/Demo5.java=UTF-8
+encoding//src/com/neusoft/io/Demo6.java=UTF-8
+encoding//src/com/neusoft/jdbc/JDBCutil.java=GBK
+encoding//src/com/neusoft/jsoup/JsoupTools.java=UTF-8
+encoding//src/com/neusoft/service/impl/EtfjinServiceBean.java=UTF-8
+encoding//src/com/neusoft/service/impl/EtfyinServiceBean.java=UTF-8
+encoding//src/com/neusoft/service/impl/MessageServiceBean.java=UTF-8
+encoding//src/com/neusoft/test/Demo0813.java=UTF-8
+encoding//src/com/neusoft/test/Demo1.java=UTF-8
+encoding//src/com/neusoft/test/Demo2.java=UTF-8
+encoding/<project>=UTF-8
