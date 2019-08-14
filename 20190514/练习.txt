@@ -1,0 +1,21 @@
+创建一个HTML页面，包含以下控件
+
+	员工名：文本框
+	账号： 文本框
+	密码：密码框
+	密码确认：密码框
+	性别：单选按钮组     男-1，女-2
+	生日：日期框
+	所在部门：下拉列表     开发一部-1  开发二部-2
+		提交
+		
+创建一个servlet，接收HTML页面提交的数据，并显示在控制台上
+
+*在数据库中创建一个employees表，将提交的数据保存至employees表中
+	empid  int      员工ID   自动生成     PK
+	ename  varchar	员工名           HTML提交
+	lname  varchar	账号               HTML提交
+	pass   varchar  密码               HTML提交
+	sex    int      性别               HTML提交
+	birthday date   生日               HTML提交
+	deptno int      所在部门       HTML提交
