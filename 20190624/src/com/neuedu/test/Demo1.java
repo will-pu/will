@@ -1,0 +1,33 @@
+package com.neuedu.test;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
+public class Demo1 {
+
+	public static void main(String[] args) throws Exception {
+		StringBuffer buffer = new StringBuffer();
+		String urlpath = "http://www.dyhjw.com/dyhjw/etf.html";
+	//	String urlpath="http://stock.finance.sina.com.cn/futures/view/vGoldEtf.php";
+		URL url = new URL(urlpath);
+		URLConnection conn = url.openConnection();
+
+		InputStream in = conn.getInputStream();
+		// 字节流-》字符流 InputStreamReader
+		InputStreamReader reader = new InputStreamReader(in, "utf-8");
+		// 按行读
+		BufferedReader breader = new BufferedReader(reader);
+		// 读
+		String line = "";
+		while ((line = breader.readLine()) != null) {
+			buffer.append(line);
+			System.out.println(line);
+		}
+		System.out.println("over");	
+	}
+
+}

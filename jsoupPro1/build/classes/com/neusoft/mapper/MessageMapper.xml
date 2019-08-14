@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.mapper.MessageMapper">
+	<insert id="add" parameterType="com.neusoft.bean.Message">
+		INSERT INTO message (id,username,title,message,TIME)
+		VALUES (NULL,#{username},#{title},#{message},NOW())
+	</insert>
+	<select id="findNewMessage" resultType="com.neusoft.bean.Message">
+		SELECT * FROM message ORDER BY TIME DESC LIMIT 0, 1
+	</select>
+		<!-- 
+	<resultMap type="com.neusoft.bean.Emp" id="emp_dept_map">
+		<id property="empno" column="empno" />
+		<result property="ename" column="ename" />
+		<result property="comm" column="comm" />
+		<result property="hiredate" column="hiredate" />
+		<result property="job" column="job" />
+		<result property="mgr" column="mgr" />
+		<result property="sal" column="sal" />
+		<result property="deptno" column="deptno" />	
+		<association property="dept" javaType="com.neusoft.bean.Dept">
+			<id property="deptno" column="deptno" />
+			<result property="dname" column="dname" />
+			<result property="loc" column="loc" />
+		</association>
+	</resultMap>
+
+
+	<select id="findAll" resultMap="emp_dept_map">
+		SELECT e.*,d.DNAME,d.LOC FROM emp e LEFT JOIN dept d 
+		ON e.DEPTNO=d.DEPTNO
+	</select>
+	
+
+	<select id="findEmpDeptAll"  resultMap="emp_dept_map">
+		SELECT emp.*,dept.DNAME,dept.LOC FROM emp LEFT JOIN dept
+		ON  emp.DEPTNO =dept.DEPTNO
+	</select>
+
+
+	<select id="findDeptByDeptno" parameterType="int"  resultMap="dept_emp_map">
+		SELECT emp.*,dept.DNAME,dept.LOC FROM emp,dept 
+		WHERE emp.DEPTNO=dept.DEPTNO AND dept.DEPTNO=#{deptno}
+	</select>
+	
+	<select id="getUnameById" parameterType="int" resultType="java.lang.String" >
+		select username from userinfo where id=#{id}
+	</select>
+	
+	<select id="getCount"  resultType="int" >
+		select count(*) from userinfo 
+	</select>
+	
+	<select id="getUserinfoById" parameterType="int" resultType="com.neusoft.bean.Userinfo">
+		select * from userinfo where id=#{id}
+	</select>
+	
+	<select id="getUserinfoById2" parameterType="int" resultType="com.neusoft.bean.Userinfo">
+		select pwd,username  from userinfo where id=#{id}
+	</select>
+	
+	<select id="findAll" resultType="com.neusoft.bean.Userinfo">
+		select * from userinfo LIMIT 0, 20;
+	</select>
+	
+	<select id="findUserinfoByUsernamePwd" parameterType="com.neusoft.bean.Userinfo" resultType="com.neusoft.bean.Userinfo" >
+		select * from userinfo where username=#{username} and pwd=#{pwd}
+	</select>
+
+	<insert id="add" parameterType="com.neusoft.bean.Userinfo">
+		insert into userinfo(id,username,pwd)  values (null ,#{username}  , #{pwd})
+	</insert>
+		
+	<update id="jiaQian" parameterType="com.neusoft.bean.Userinfo">
+		UPDATE userinfo SET num=num + #{num} 
+		WHERE username=#{username}
+	</update>
+	<update id="jianQian" parameterType="Map">
+		UPDATE userinfo SET num=num - #{num} 
+		WHERE username=#{username}
+	</update>
+	
+	<select id="findAllByMN" parameterType="Map" resultType="com.neusoft.bean.Userinfo">
+		select * from userinfo LIMIT #{m}, #{n};
+	</select>
+	
+	<select id="findByTiaoJian" parameterType="com.neusoft.bean.Userinfo" resultType="com.neusoft.bean.Userinfo">
+		SELECT * FROM userinfo WHERE 1=1
+		<if test="id != 0 ">
+			AND id>2 and id &lt; #{id}
+		</if>
+		<if test=" username != null">
+			AND username LIKE #{username}
+		</if>
+		
+	</select>
+	
+
+	<delete id="delById" parameterType="int">
+		 DELETE FROM userinfo WHERE id=#{idasdsad}
+	</delete>
+  -->
+</mapper>
